@@ -44,7 +44,7 @@
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>M</b>B</span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>Mamba</b>&nbsp;Blog</span>
+            <span class="logo-lg"><b>Finley</b>&nbsp;Blog</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top">
@@ -124,7 +124,7 @@
         <div class="pull-right hidden-xs">
 
         </div>
-        <strong>Powered by <a href="http://blog.mambaxin.com" target="_blank">Mamba Blog</a></strong>
+        <strong>Powered by <a href="http://muxiaofeng.com" target="_blank">Finley Blog</a></strong>
     </footer>
 </div>
 <!-- ./wrapper -->

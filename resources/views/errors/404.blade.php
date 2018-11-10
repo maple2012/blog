@@ -44,7 +44,7 @@
 
         <p>》<a style="cursor:pointer" onclick="history.back()">返回上一页面</a></p>
 
-        <p>》<a href="http://blog.mambaxin.com">返回网站首页</a></p>
+        <p>》<a href="http://muxiaofeng.com">返回网站首页</a></p>
 
     </div>
 

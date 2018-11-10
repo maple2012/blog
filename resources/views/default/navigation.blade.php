@@ -1,6 +1,6 @@
 <div class="menu">
     <nav class="nav" id="topnav">
-        <h1 class="logo"><a href="{{ url("/") }}">{{ $systemPresenter->getKeyValue('blog_name') }}</a></h1>
+        <h1 class="logo">Finley Blog<a href="{{ url("/") }}">{{ $systemPresenter->getKeyValue('blog_name') }}</a></h1>
         @inject('navPresenter', 'App\Presenters\NavigationPresenter')
         <?php $navigations = $navPresenter->getNavList(); ?>
         @if ($navigations)

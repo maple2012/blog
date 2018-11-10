@@ -15,7 +15,7 @@
         ?>
         <li class="wx"><img src="{{ asset('uploads/avatar')."/".$author->user_pic }}"></li>
         @if ($github_url != "")
-         <li class="tencent"><a href="{{ $github_url }}" target="_blank"><span>GitHub</span>Mamba</a></li>
+         <li class="tencent"><a href="{{ $github_url }}" target="_blank"><span>GitHub</span>Finley</a></li>
          @endif
          @if($qq != "")
         <li class="qq"><a><span>QQ号</span>{{ $qq }}</a></li>
