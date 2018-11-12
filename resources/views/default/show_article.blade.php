@@ -224,7 +224,28 @@ $author = isset($user->id) ? $user : $userPresenter->getUserInfo();
                         return false;
                     }
                 }
+                Today = new Date();
 
+                var NowHour = Today.getHours();
+
+                var NowMinute = Today.getMinutes();
+
+                var NowSecond = Today.getSeconds();
+
+                var mysec = (NowHour*3600)+(NowMinute*60)+NowSecond;
+
+                if((mysec-document.formsubmitf.mypretime.value)>10){
+
+                    //10只是一个时间值，就是5秒钟内禁止重复提交
+                    document.formsubmitf.mypretime.value=mysec;
+
+                }else{
+
+                    alert(' 按一次就够了，请勿重复提交！请耐心等待！谢谢合作！');
+
+                    return false;
+
+                }
                 $.ajax({
                     type: "POST",//方法类型
                     dataType: "json",//预期服务器返回的数据类型
@@ -242,28 +263,6 @@ $author = isset($user->id) ? $user : $userPresenter->getUserInfo();
                             }else{
                                 var replyid=$('#replyid').val();
                                 $('#'+replyid).append(result.html);
-                            }
-                            Today = new Date();
-
-                            var NowHour = Today.getHours();
-
-                            var NowMinute = Today.getMinutes();
-
-                            var NowSecond = Today.getSeconds();
-
-                            var mysec = (NowHour*3600)+(NowMinute*60)+NowSecond;
-                            
-                            if((mysec-document.formsubmitf.mypretime.value)>10){
-
-                                //10只是一个时间值，就是5秒钟内禁止重复提交
-                                document.formsubmitf.mypretime.value=mysec;
-
-                            }else{
-
-                                alert(' 按一次就够了，请勿重复提交！请耐心等待！谢谢合作！');
-
-                                return false;
-
                             }
                             $.ajax({
                                 type:'GET',
