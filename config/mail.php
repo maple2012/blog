@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'mamba_blog@sina.com', 'name' => 'Finley Blog'],
+    'from' => ['address' => 'finleys@yeah.net', 'name' => 'Finley Blog'],
 
     /*
     |--------------------------------------------------------------------------
