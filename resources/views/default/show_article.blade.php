@@ -139,7 +139,7 @@ $author = isset($user->id) ? $user : $userPresenter->getUserInfo();
                                 <h4 class="modal-title" id="myModalLabel">发表评论</h4>
                             </div>
                             <div class="modal-body">
-                                <form action="" method="post" id="form1">
+                                <form action="" method="post" id="form1" name='formsubmitf'>
                                     {{ csrf_field() }}
                                     <div class="form-group">
                                         <label for="exampleInputFile">留言</label>
@@ -162,6 +162,7 @@ $author = isset($user->id) ? $user : $userPresenter->getUserInfo();
                                     <input type="text" id="comment_id" name="comment_id" style="display:none">
                                     <input type="text" name="article_id" value="{{ $article->id }}" style="display:none">
                                     <input type="submit" id="commentFormBtn"  style="display:none">
+                                    <input type='hidden' name='mypretime' value='0' id="mypretime">
                                 </form>
                             </div>
                             <div class="modal-footer">
@@ -223,6 +224,7 @@ $author = isset($user->id) ? $user : $userPresenter->getUserInfo();
                         return false;
                     }
                 }
+
                 $.ajax({
                     type: "POST",//方法类型
                     dataType: "json",//预期服务器返回的数据类型
@@ -240,6 +242,28 @@ $author = isset($user->id) ? $user : $userPresenter->getUserInfo();
                             }else{
                                 var replyid=$('#replyid').val();
                                 $('#'+replyid).append(result.html);
+                            }
+                            Today = new Date();
+
+                            var NowHour = Today.getHours();
+
+                            var NowMinute = Today.getMinutes();
+
+                            var NowSecond = Today.getSeconds();
+
+                            var mysec = (NowHour*3600)+(NowMinute*60)+NowSecond;
+                            
+                            if((mysec-document.formsubmitf.mypretime.value)>10){
+
+                                //10只是一个时间值，就是5秒钟内禁止重复提交
+                                document.formsubmitf.mypretime.value=mysec;
+
+                            }else{
+
+                                alert(' 按一次就够了，请勿重复提交！请耐心等待！谢谢合作！');
+
+                                return false;
+
                             }
                             $.ajax({
                                 type:'GET',
